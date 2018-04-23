@@ -32,12 +32,12 @@ for j=1:n1b %to make a sound file for each row of dvec
 
     svec = svec*0.99; %prevent clipping
     
-       flankIOI = num2str(dvec_ms(j,3)+50);    %ITI after flanker is 3rd element, +50 for IOI
+        flankIOI = num2str(dvec_ms(j,3)+50);    %ITI after flanker is 3rd element, +50 for IOI
         compDur = num2str(dvec_ms(j,19)+50);    %ITI after comp is 19th element, +50 for IOI
         freqFlank = num2str(freqvec(1,1));      %1st half of freqvec has flanker pitch, element 14 onwards has target pitch
         freqTarget = num2str(freqvec(1,14));    %"target" = standard+comparison
         fname = strcat('freqFlank',freqFlank,'_flankIOI',flankIOI,'_freqTarget',freqTarget,'_compDur',num2str(compDur),'.wav');
-        
+      
     
     wavwrite(svec,fs,fname);
 end
